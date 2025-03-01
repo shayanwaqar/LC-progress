@@ -11,15 +11,12 @@ class Solution:
                     q.append((r,c))
                 if grid[r][c] == 1:
                     oranges = True
-        
-        # if not oranges:
-        #     return -1
 
         if len(q) == 0: #no oranges in the grid
             return 0 if not oranges else -1
         
         #now q contains all rotten oranges
-        level = -1 #might have to start at 1
+        level = -1
         while q:
             level += 1
             for _ in range(len(q)):
@@ -36,7 +33,6 @@ class Solution:
             for c in range(cols):
                 if grid[r][c] == 1:#normal orange found
                     return -1
-
         return level
                         
 
